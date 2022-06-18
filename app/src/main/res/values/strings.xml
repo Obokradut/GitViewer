@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">Git Viewer</string>
+    <string name="logo">Logo</string>
+    <string name="company_name">Company name</string>
+    <string name="personal_access_token">Personal access token</string>
+    <string name="sign_in">Sign In</string>
+    <string name="error_icon">Error icon</string>
+    <string name="something_error">Something error</string>
+    <string name="check_your_something">Check your something</string>
+    <string name="refresh_button">Refresh</string>
+    <string name="connection_error_icon">Connection error icon</string>
+    <string name="connection_error">Connection error</string>
+    <string name="check_your_internet_connection">Check your Internet connection</string>
+    <string name="empty_icon">Empty icon</string>
+    <string name="no_repositories_at_the_moment">No repositories at the moment</string>
+    <string name="empty">Empty</string>
+    <string name="link_icon">Link icon</string>
+    <string name="license_icon">License icon</string>
+    <string name="license_caption">License caption</string>
+    <string name="watch_icon">Watch icon</string>
+    <string name="watches_caption">Watches caption</string>
+    <string name="stars_icon">Stars icon</string>
+    <string name="stars_caption">Stars caption</string>
+    <string name="fork_icon">Fork icon</string>
+    <string name="forks_caption">Forks caption</string>
 </resources>
