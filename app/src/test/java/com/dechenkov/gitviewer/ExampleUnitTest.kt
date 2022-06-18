@@ -1,4 +1,4 @@
-package com.example.gitviewer
+package com.dechenkov.gitviewer
 
 import org.junit.Test
 

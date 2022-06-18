@@ -1,4 +1,4 @@
-package com.example.gitviewer
+package com.dechenkov.gitviewer
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
