@@ -10,7 +10,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.gitviewer"
+        applicationId "com.dechenkov.gitviewer"
         minSdk 21
         targetSdk 32
         versionCode 1
@@ -31,6 +31,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding = true
     }
 }
 
@@ -63,4 +66,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.4.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.4.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.4.1")
+
+    //MarkdownView
+    implementation(project(":markdown-view"))
 }
