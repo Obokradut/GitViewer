@@ -7,4 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="git_background">#0D1117</color>
+    <color name="git_green_button">#5a9357</color>
+    <color name="git_secondary">#58A6FF</color>
+    <color name="git_error">#B00020</color>
+    <color name="git_second_error">#CB4F4F</color>
+    <color name="git_gray">#86888b</color>
+    <color name="git_light_gray">#88FFFFFF</color>
+    <color name="git_yellow">#FAD876</color>
+    <color name="git_lime">#6ED370</color>
+    <color name="git_light_blue">#9CFFF9</color>
 </resources>
