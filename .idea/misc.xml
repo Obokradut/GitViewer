@@ -4,6 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Dess/AndroidStudioProjects/GitViewer/app/src/main/res/layout/activity_main.xml" value="0.10916919959473151" />
+        <entry key="..\:/Users/Dess/AndroidStudioProjects/GitViewer/app/src/main/res/layout/connection_error_state.xml" value="0.5505208333333333" />
+        <entry key="..\:/Users/Dess/AndroidStudioProjects/GitViewer/app/src/main/res/layout/empty_state.xml" value="0.5505208333333333" />
+        <entry key="..\:/Users/Dess/AndroidStudioProjects/GitViewer/app/src/main/res/layout/error_state.xml" value="0.5505208333333333" />
+        <entry key="..\:/Users/Dess/AndroidStudioProjects/GitViewer/app/src/main/res/layout/fragment_authorization.xml" value="0.37028301886792453" />
+        <entry key="..\:/Users/Dess/AndroidStudioProjects/GitViewer/app/src/main/res/layout/fragment_details_repositories.xml" value="0.5505208333333333" />
+        <entry key="..\:/Users/Dess/AndroidStudioProjects/GitViewer/app/src/main/res/layout/fragment_list_repositories.xml" value="0.5505208333333333" />
+        <entry key="..\:/Users/Dess/AndroidStudioProjects/GitViewer/app/src/main/res/layout/fragment_splash.xml" value="0.18857142857142858" />
       </map>
     </option>
   </component>
