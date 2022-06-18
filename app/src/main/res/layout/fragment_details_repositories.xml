@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:id="@+id/details_scroll_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/link_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:contentDescription="@string/link_icon"
+                android:src="@drawable/ic_link"
+                app:layout_constraintBottom_toBottomOf="@id/repository_link"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/repository_link"
+                app:tint="?attr/colorSecondary" />
+
+            <TextView
+                android:id="@+id/repository_link"
+                style="@style/DetailsText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="15dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/git_secondary"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/link_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/license_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:contentDescription="@string/license_icon"
+                android:src="@drawable/ic_license"
+                app:layout_constraintStart_toStartOf="@id/link_icon"
+                app:layout_constraintTop_toBottomOf="@id/repository_link"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/license_caption"
+                style="@style/DetailsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="@string/license_caption"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/license_icon"
+                app:layout_constraintStart_toEndOf="@id/license_icon"
+                app:layout_constraintTop_toTopOf="@id/license_icon" />
+
+            <TextView
+                android:id="@+id/license_name"
+                style="@style/DetailsText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="@string/license_caption"
+                android:textAlignment="textEnd"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/license_icon"
+                app:layout_constraintEnd_toEndOf="@id/repository_link"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toEndOf="@id/license_caption"
+                app:layout_constraintTop_toTopOf="@id/license_icon" />
+
+            <LinearLayout
+                android:id="@+id/stars_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@id/link_icon"
+                app:layout_constraintTop_toBottomOf="@id/license_icon">
+
+                <ImageView
+                    android:id="@+id/stars_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/stars_icon"
+                    android:src="@drawable/ic_starts"
+                    app:tint="@color/git_yellow" />
+
+                <TextView
+                    android:id="@+id/stars_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text=""
+                    android:textColor="@color/git_yellow"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/stars_caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="@string/stars_caption"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/forks_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@id/link_icon"
+                app:layout_constraintTop_toBottomOf="@id/license_icon">
+
+                <ImageView
+                    android:id="@+id/fork_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/fork_icon"
+                    android:src="@drawable/ic_forks"
+                    app:tint="@color/git_lime" />
+
+                <TextView
+                    android:id="@+id/forks_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text=""
+                    android:textColor="@color/git_lime"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/forks_caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="@string/forks_caption"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/watches_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                app:layout_constraintStart_toStartOf="@id/link_icon"
+                app:layout_constraintTop_toBottomOf="@id/license_icon">
+
+                <ImageView
+                    android:id="@+id/watch_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/watch_icon"
+                    android:src="@drawable/ic_watchers"
+                    app:tint="@color/git_light_blue" />
+
+                <TextView
+                    android:id="@+id/watches_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text=""
+                    android:textColor="@color/git_light_blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/watches_caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="@string/watches_caption"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <!--TODO возможно другой отступ, надо проверить-->
+            <androidx.constraintlayout.helper.widget.Flow
+                android:id="@+id/info_flow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                app:constraint_referenced_ids="stars_group, forks_group, watches_group"
+                app:flow_horizontalBias="0"
+                app:flow_horizontalGap="16dp"
+                app:flow_horizontalStyle="spread_inside"
+                app:flow_verticalGap="6dp"
+                app:layout_constraintEnd_toEndOf="@id/repository_link"
+                app:layout_constraintStart_toStartOf="@id/link_icon"
+                app:layout_constraintTop_toBottomOf="@id/license_icon" />
+
+            <com.emelyanov.markdownview.MarkdownView
+                android:id="@+id/readme_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/info_flow"
+                app:layout_constraintStart_toStartOf="@id/info_flow"
+                app:layout_constraintTop_toBottomOf="@id/info_flow"
+                tools:ignore="WebViewLayout" />
+
+            <ProgressBar
+                android:id="@+id/readme_progressbar"
+                style="@style/GitProgressbar"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/info_flow"
+                app:layout_constraintStart_toStartOf="@id/info_flow"
+                app:layout_constraintTop_toBottomOf="@id/info_flow" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/repo_progressbar"
+        style="@style/GitProgressbar"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/repo_error_state"
+        layout="@layout/something_error_state"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/details_scroll_container"
+        android:visibility="gone"/>
+
+    <include
+        android:id="@+id/repo_connection_error_state"
+        layout="@layout/connection_error_state"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/details_scroll_container"
+        android:visibility="gone"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
