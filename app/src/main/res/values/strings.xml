@@ -23,4 +23,6 @@
     <string name="stars_caption">Stars caption</string>
     <string name="fork_icon">Fork icon</string>
     <string name="forks_caption">Forks caption</string>
+    <string name="enter_git_token">Enter git token</string>
+    <string name="logout">Logout</string>
 </resources>
