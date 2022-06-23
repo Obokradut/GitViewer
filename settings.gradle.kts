@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Git Viewer"
-include ':app'
+include (":app")
 include (":markdown-view")
