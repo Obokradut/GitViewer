@@ -4,6 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.dechenkov.gitviewer.R
+import com.dechenkov.gitviewer.modules.authorization.domain.usecases.GetConnectionErrorMessageUseCase
 import com.dechenkov.gitviewer.modules.authorization.domain.usecases.GetEnterGitTokenUseCase
 import com.dechenkov.gitviewer.modules.authorization.domain.usecases.GetGitTokenUseCase
 import com.dechenkov.gitviewer.modules.authorization.domain.usecases.SignInUseCase
@@ -22,7 +24,8 @@ constructor(
     private val getGitToken: GetGitTokenUseCase,
     private val getEnterGitToken: GetEnterGitTokenUseCase,
     private val signIn: SignInUseCase,
-    private val navigateToListRepositories: NavigateToListRepositoriesUseCase
+    private val navigateToListRepositories: NavigateToListRepositoriesUseCase,
+    private val connectionErrorMessage: GetConnectionErrorMessageUseCase
 ) : ViewModel() {
     private val _state: MutableLiveData<State> = MutableLiveData(State.Loading)
     val state: LiveData<State>
@@ -67,7 +70,11 @@ constructor(
                 signIn(gitToken!!)
                 navigateToListRepositories()
             } catch (ex: Exception) {
-                _state.postValue(State.InvalidInput(requireNotNull(ex.message)))
+                if (ex.message.toString().isEmpty()) {
+                    _state.postValue(State.InvalidInput(requireNotNull(ex.message)))
+                } else {
+                    _state.postValue(State.InvalidInput(connectionErrorMessage()))
+                }
             }
         }
     }

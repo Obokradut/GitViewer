@@ -1,6 +1,7 @@
 package com.dechenkov.gitviewer.modules.details_repositories.domain
 
 import androidx.lifecycle.*
+import com.dechenkov.gitviewer.modules.authorization.domain.AuthViewModel
 import com.dechenkov.gitviewer.modules.details_repositories.domain.usecases.EditReadmeUseCase
 import com.dechenkov.gitviewer.modules.details_repositories.domain.usecases.GetRepositoryDetailsUseCase
 import com.dechenkov.gitviewer.modules.details_repositories.domain.usecases.GetRepositoryReadmeUseCase
@@ -25,14 +26,14 @@ constructor(
     val state: LiveData<State>
         get() = _state
 
-    init {
-        val repository = requireNotNull(
-            savedStateHandle.get<String>(REPOSITORY_NAME)
-        )
-        val owner = requireNotNull(
-            savedStateHandle.get<String>(REPOSITORY_OWNER)
-        )
+    private val repository = requireNotNull(
+        savedStateHandle.get<String>(REPOSITORY_NAME)
+    )
+    private val owner = requireNotNull(
+        savedStateHandle.get<String>(REPOSITORY_OWNER)
+    )
 
+    init {
         loadDetailRepoInfo(
             repository = repository,
             owner = owner
@@ -57,7 +58,13 @@ constructor(
                         )
                     )
                 }
-            } catch (ex: Exception) {}
+            } catch (ex: Exception) {
+                if(_state.value is State.Loading) {
+                    _state.postValue(State.ConnectionError)
+                } else {
+                    _state.postValue(State.Error(ex.message.toString()))
+                }
+            }
         }
     }
 
@@ -84,6 +91,10 @@ constructor(
         } catch (ex: Exception) {
             _state.postValue(state.copy(readmeState = ReadmeState.Empty))
         }
+    }
+
+    fun stateUpdate() {
+        loadDetailRepoInfo(repository,owner)
     }
 
     companion object NavConsts {

@@ -52,6 +52,7 @@ class DetailInfoFragment : Fragment() {
         detailInfoViewModel.state.observe(viewLifecycleOwner) { detailState ->
             with(binding) {
                 supportActionBar?.title = repoTitle
+
                 repoProgressbar.visibility =
                     if (detailState is DetailInfoViewModel.State.Loading) View.VISIBLE
                     else View.GONE
@@ -84,15 +85,7 @@ class DetailInfoFragment : Fragment() {
                             else -> ""
                         }
                     )
-                }
-                else if (detailState is DetailInfoViewModel.State.ConnectionError) {
-                    repoConnectionErrorState.root.visibility = View.VISIBLE
-                }
-                else if (detailState is DetailInfoViewModel.State.Error) {
-                    repoErrorState.root.visibility = View.VISIBLE
-                    repoErrorState.errorDescription.text = detailState.error
-                }
-                else {
+                }else {
                     detailsScrollContainer.visibility = View.GONE
                     repositoryLink.text = null
                     licenseName.text = null
@@ -105,7 +98,27 @@ class DetailInfoFragment : Fragment() {
                     repoErrorState.root.visibility = View.GONE
                     repoErrorState.errorDescription.text = null
                 }
+
+                if (detailState is DetailInfoViewModel.State.ConnectionError)
+                    repoConnectionErrorState.root.visibility = View.VISIBLE
+                else repoConnectionErrorState.root.visibility = View.GONE
+
+                if (detailState is DetailInfoViewModel.State.Error) {
+                    repoErrorState.root.visibility = View.VISIBLE
+                    repoErrorState.errorDescription.text = detailState.error
+                } else {
+                    repoErrorState.root.visibility = View.GONE
+                    repoErrorState.errorDescription.text = null
+                }
+
+                repoConnectionErrorState.refreshButton.setOnClickListener {
+                    detailInfoViewModel.stateUpdate()
+                }
+                repoErrorState.refreshButton.setOnClickListener {
+                    detailInfoViewModel.stateUpdate()
+                }
             }
+
         }
         return binding.root
     }
