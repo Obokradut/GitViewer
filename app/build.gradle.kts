@@ -53,8 +53,8 @@ dependencies {
     kapt ("com.google.dagger:hilt-compiler:2.42")
 
     //FragmentNavigation
-    implementation ("android.arch.navigation:navigation-fragment:1.0.0")
-    implementation ("android.arch.navigation:navigation-ui:1.0.0")
+    implementation ("androidx.navigation:navigation-fragment:2.5.0-rc02")
+    implementation ("androidx.navigation:navigation-ui:2.5.0-rc02")
 
     //Kotlin Serialization
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3")
@@ -70,5 +70,5 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.4.1")
 
     //MarkdownView
-    implementation(project(":markdown-view"))
+    implementation ("com.github.tiagohm.MarkdownView:library:0.19.0")
 }
