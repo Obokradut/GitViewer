@@ -1,7 +1,7 @@
 package com.dechenkov.gitviewer.modules.authorization.domain.usecases
 
 
-import com.dechenkov.gitviewer.shared.IKeyValueStorage
+import com.dechenkov.gitviewer.shared.value_storage.IKeyValueStorage
 import javax.inject.Inject
 
 class GetGitTokenUseCase
