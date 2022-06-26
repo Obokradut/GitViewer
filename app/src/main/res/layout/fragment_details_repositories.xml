@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/git_background"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ScrollView
@@ -28,7 +29,7 @@
                 app:layout_constraintBottom_toBottomOf="@id/repository_link"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/repository_link"
-                app:tint="?attr/colorSecondary" />
+                app:tint="@color/git_secondary" />
 
             <TextView
                 android:id="@+id/repository_link"
@@ -196,7 +197,6 @@
 
             </LinearLayout>
 
-            <!--TODO возможно другой отступ, надо проверить-->
             <androidx.constraintlayout.helper.widget.Flow
                 android:id="@+id/info_flow"
                 android:layout_width="0dp"
@@ -211,16 +211,16 @@
                 app:layout_constraintStart_toStartOf="@id/link_icon"
                 app:layout_constraintTop_toBottomOf="@id/license_icon" />
 
-            <com.emelyanov.markdownview.MarkdownView
+            <br.tiagohm.markdownview.MarkdownView
                 android:id="@+id/readme_view"
-                android:layout_width="0dp"
+                app:escapeHtml="false"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/info_flow"
                 app:layout_constraintStart_toStartOf="@id/info_flow"
-                app:layout_constraintTop_toBottomOf="@id/info_flow"
-                tools:ignore="WebViewLayout" />
+                app:layout_constraintTop_toBottomOf="@id/info_flow"/>
 
             <ProgressBar
                 android:id="@+id/readme_progressbar"
