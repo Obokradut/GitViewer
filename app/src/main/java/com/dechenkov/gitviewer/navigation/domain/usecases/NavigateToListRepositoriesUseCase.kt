@@ -1,10 +1,10 @@
 package com.dechenkov.gitviewer.navigation.domain.usecases
 
-import com.dechenkov.gitviewer.modules.navigation.IMainDestinations
-import com.dechenkov.gitviewer.modules.navigation.MainNavProvider
+import com.dechenkov.gitviewer.navigation.domain.IMainDestinations
+import com.dechenkov.gitviewer.navigation.domain.MainNavProvider
 import javax.inject.Inject
 
-class NavigateToListRepositories
+class NavigateToListRepositoriesUseCase
 @Inject
 constructor(
     private val navProvider: MainNavProvider
