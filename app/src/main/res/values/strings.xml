@@ -13,7 +13,10 @@
     <string name="check_your_internet_connection">Check your Internet connection</string>
     <string name="empty_icon">Empty icon</string>
     <string name="no_repositories_at_the_moment">No repositories at the moment</string>
+    <string name="are_you_sure">Are you sure?</string>
     <string name="empty">Empty</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
     <string name="link_icon">Link icon</string>
     <string name="license_icon">License icon</string>
     <string name="license_caption">License caption</string>
@@ -25,4 +28,6 @@
     <string name="forks_caption">Forks caption</string>
     <string name="enter_git_token">Enter git token</string>
     <string name="logout">Logout</string>
+    <string name="invalid_input">Invalid input</string>
+    <string name="server_not_responding">Server not responding</string>
 </resources>
