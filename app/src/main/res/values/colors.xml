@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="git_background">#0D1117</color>
+    <color name="git_appbar">#161B22</color>
     <color name="git_green_button">#5a9357</color>
     <color name="git_secondary">#58A6FF</color>
     <color name="git_error">#B00020</color>
