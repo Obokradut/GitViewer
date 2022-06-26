@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/git_background"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <ImageView
         android:id="@+id/empty_error_icon"
@@ -23,19 +24,19 @@
         app:layout_constraintTop_toBottomOf="@id/empty_error_icon"
         app:layout_constraintStart_toStartOf="@id/empty_error_icon"
         app:layout_constraintEnd_toEndOf="@id/empty_error_icon"
-        app:layout_constraintBottom_toTopOf="@id/empty_error_icon"
+        app:layout_constraintBottom_toTopOf="@id/error_description"
         android:textColor="@color/git_secondary"
         android:textSize="16sp"
         android:text="@string/empty" />
 
     <TextView
         android:id="@+id/error_description"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintDimensionRatio="W 0.8"
         app:layout_constraintTop_toBottomOf="@id/empty_error_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/empty_error_title"
+        app:layout_constraintEnd_toEndOf="@+id/empty_error_title"
         app:layout_constraintBottom_toTopOf="@id/refresh_button"
         android:textColor="@color/white"
         android:textSize="14sp"
