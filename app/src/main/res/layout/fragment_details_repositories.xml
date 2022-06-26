@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/git_background"
@@ -98,16 +97,16 @@
 
                 <ImageView
                     android:id="@+id/stars_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:contentDescription="@string/stars_icon"
                     android:src="@drawable/ic_starts"
                     app:tint="@color/git_yellow" />
 
                 <TextView
                     android:id="@+id/stars_count"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginStart="6dp"
                     android:text=""
                     android:textColor="@color/git_yellow"
@@ -115,8 +114,8 @@
 
                 <TextView
                     android:id="@+id/stars_caption"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginStart="6dp"
                     android:text="@string/stars_caption"
                     android:textColor="?attr/colorOnPrimary"
@@ -135,16 +134,16 @@
 
                 <ImageView
                     android:id="@+id/fork_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:contentDescription="@string/fork_icon"
                     android:src="@drawable/ic_forks"
                     app:tint="@color/git_lime" />
 
                 <TextView
                     android:id="@+id/forks_count"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginStart="6dp"
                     android:text=""
                     android:textColor="@color/git_lime"
@@ -152,8 +151,8 @@
 
                 <TextView
                     android:id="@+id/forks_caption"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginStart="6dp"
                     android:text="@string/forks_caption"
                     android:textColor="?attr/colorOnPrimary"
@@ -167,12 +166,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
                 app:layout_constraintStart_toStartOf="@id/link_icon"
-                app:layout_constraintTop_toBottomOf="@id/license_icon">
+                app:layout_constraintTop_toBottomOf="@id/license_icon"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/watch_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
                     android:contentDescription="@string/watch_icon"
                     android:src="@drawable/ic_watchers"
                     app:tint="@color/git_light_blue" />
@@ -183,6 +184,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:text=""
+                    android:textAlignment="center"
                     android:textColor="@color/git_light_blue"
                     android:textSize="16sp" />
 
