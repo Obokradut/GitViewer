@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/repository_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text=""
+        android:textColor="@color/git_secondary"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/repository_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/repository_title"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/repository_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/repository_title"
+        app:layout_constraintTop_toBottomOf="@id/repository_title"
+        app:layout_constraintEnd_toEndOf="@id/repository_language"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:text=""
+        android:maxLines="3"
+        android:ellipsize="end"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
