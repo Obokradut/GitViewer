@@ -1,6 +1,6 @@
 package com.dechenkov.gitviewer.modules.authorization.domain.usecases
 
-import com.dechenkov.gitviewer.shared.IAppRepository
+import com.dechenkov.gitviewer.shared.app.IAppRepository
 import javax.inject.Inject
 
 class SignInUseCase
