@@ -4,7 +4,8 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class GitRepositoryShortInfo(
-    val owner: String,
-    val title: String,
-    val description: String?
+    val owner: UserInfoResponse,
+    val name: String,
+    val description: String?,
+    val language: String?,
 )
