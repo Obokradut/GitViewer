@@ -21,11 +21,11 @@
     <string name="license_icon">License icon</string>
     <string name="license_caption">License caption</string>
     <string name="watch_icon">Watch icon</string>
-    <string name="watches_caption">Watches caption</string>
+    <string name="watches_caption">watchers</string>
     <string name="stars_icon">Stars icon</string>
-    <string name="stars_caption">Stars caption</string>
+    <string name="stars_caption">stars</string>
     <string name="fork_icon">Fork icon</string>
-    <string name="forks_caption">Forks caption</string>
+    <string name="forks_caption">forks</string>
     <string name="enter_git_token">Enter git token</string>
     <string name="logout">Logout</string>
     <string name="invalid_input">Invalid input</string>
