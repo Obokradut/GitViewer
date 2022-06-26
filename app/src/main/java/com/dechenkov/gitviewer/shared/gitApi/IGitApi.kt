@@ -2,6 +2,8 @@ package com.dechenkov.gitviewer.shared.gitApi
 
 import com.dechenkov.gitviewer.shared.models.GitRepositoryFullInfo
 import com.dechenkov.gitviewer.shared.models.GitRepositoryShortInfo
+import com.dechenkov.gitviewer.shared.models.Readme
+import com.dechenkov.gitviewer.shared.models.UserInfoResponse
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Path
@@ -11,7 +13,7 @@ interface IGitApi {
     @GET("/user")
     suspend fun getUserInfo(
         @Header("Authorization") token: String
-    ) : String
+    ) : UserInfoResponse
 
     @GET("/user/repos?per_page=10&page=1&type=all&sort=created&direction=desc")
     suspend fun getRepositories(
@@ -38,7 +40,7 @@ interface IGitApi {
         @Header("Authorization") token: String,
         @Path("owner") owner: String,
         @Path("repo") repo: String,
-    ) : String
+    ) : Readme
 
     @GET("repos/{owner}/{repo}/readme")
     suspend fun getReadme(
@@ -46,5 +48,5 @@ interface IGitApi {
         @Path("owner") owner: String,
         @Path("repo") repo: String,
         @Query("ref") branch: String
-    ) : String
+    ) : Readme
 }

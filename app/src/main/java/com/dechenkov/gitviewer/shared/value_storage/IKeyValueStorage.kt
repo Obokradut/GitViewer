@@ -1,4 +1,4 @@
-package com.dechenkov.gitviewer.shared
+package com.dechenkov.gitviewer.shared.value_storage
 
 interface IKeyValueStorage {
     var authToken: String?

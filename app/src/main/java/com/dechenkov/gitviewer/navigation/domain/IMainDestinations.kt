@@ -1,4 +1,4 @@
-package com.dechenkov.gitviewer.modules.navigation
+package com.dechenkov.gitviewer.navigation.domain
 
 sealed interface IMainDestinations {
     object Authorization : IMainDestinations
