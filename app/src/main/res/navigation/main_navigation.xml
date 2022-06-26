@@ -7,5 +7,39 @@
     <fragment
         android:id="@+id/authorizationFragment"
         android:name="com.dechenkov.gitviewer.modules.authorization.presentation.AuthFragment"
-        android:label="AuthorizationFragment" />
+        android:label="AuthorizationFragment"
+        tools:layout="@layout/fragment_authorization">
+        <action
+            android:id="@+id/navigateToRepositoriesList"
+            app:destination="@id/repositoriesListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/repositoriesListFragment"
+        android:name="com.dechenkov.gitviewer.modules.list_repositories.presentation.RepositoriesListFragment"
+        android:label="Repositories"
+        tools:layout="@layout/fragment_list_repositories">
+        <action
+            android:id="@+id/navigateToDetailInfo"
+            app:destination="@id/detailInfoFragment"
+            app:launchSingleTop="true" />
+    </fragment>
+    <action
+        android:id="@+id/navigateToAuth"
+        app:destination="@id/authorizationFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/main_navigation"
+        app:popUpToInclusive="true" />
+    <fragment
+        android:id="@+id/detailInfoFragment"
+        android:name="com.dechenkov.gitviewer.modules.details_repositories.presentation.DetailInfoFragment"
+        android:label=""
+        tools:layout="@layout/fragment_details_repositories">
+        <argument
+            android:name="repo"
+            app:argType="string" />
+        <argument
+            android:name="owner"
+            app:argType="string" />
+    </fragment>
 </navigation>
