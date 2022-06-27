@@ -46,18 +46,14 @@ constructor(
                     _state.postValue(State.InvalidInput(getEnterGitToken()))
                     return@launch
                 }
+
                 signIn(token.value!!)
                 navigateToListRepositories()
             } catch (ex: Exception) {
                 if (ex.message.toString().isEmpty()) {
                     _state.postValue(State.InvalidInput(requireNotNull(ex.message)))
                 } else {
-                    if (_state.value is State.Loading){
-                        _state.postValue(State.InvalidInput(connectionErrorMessage()))
-                    }
-                    else{
-                        _state.postValue(State.InvalidInput(invalidInputMessage()))
-                    }
+                    _state.postValue(State.InvalidInput(invalidInputMessage()))
                 }
             }
         }

@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.dechenkov.gitviewer.modules.authorization.domain.AuthViewModel
 import com.dechenkov.gitviewer.modules.list_repositories.domain.usecases.GetRepositoriesUseCase
 import com.dechenkov.gitviewer.navigation.domain.usecases.NavigateToDetailsRepositoryUseCase
 import com.dechenkov.gitviewer.shared.models.Repo
@@ -41,7 +42,10 @@ constructor(
                 }
             }
             catch (ex: Exception) {
-                _state.postValue(State.Error(requireNotNull(ex.message)))
+                if (ex.message.toString().isEmpty())
+                    _state.postValue(State.Error(requireNotNull(ex.message)))
+                else
+                    _state.postValue(State.Error(ex.message.toString()))
             }
         }
     }
