@@ -52,7 +52,11 @@ constructor(
                 signIn(token.value!!)
                 navigateToListRepositories()
             } catch (ex: Exception) {
-                _state.postValue(State.InvalidInput(requireNotNull(ex.message)))
+                if (ex.message.toString().isEmpty()) {
+                    _state.postValue(State.InvalidInput(requireNotNull(ex.message)))
+                } else {
+                    _state.postValue(State.InvalidInput(connectionErrorMessage()))
+                }
             }
         }
     }
