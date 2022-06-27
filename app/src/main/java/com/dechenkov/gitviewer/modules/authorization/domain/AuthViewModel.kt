@@ -4,11 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.dechenkov.gitviewer.R
-import com.dechenkov.gitviewer.modules.authorization.domain.usecases.GetConnectionErrorMessageUseCase
-import com.dechenkov.gitviewer.modules.authorization.domain.usecases.GetEnterGitTokenUseCase
-import com.dechenkov.gitviewer.modules.authorization.domain.usecases.GetGitTokenUseCase
-import com.dechenkov.gitviewer.modules.authorization.domain.usecases.SignInUseCase
+import com.dechenkov.gitviewer.modules.authorization.domain.usecases.*
 import com.dechenkov.gitviewer.navigation.domain.usecases.NavigateToListRepositoriesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
@@ -25,7 +21,8 @@ constructor(
     private val getEnterGitToken: GetEnterGitTokenUseCase,
     private val signIn: SignInUseCase,
     private val navigateToListRepositories: NavigateToListRepositoriesUseCase,
-    private val connectionErrorMessage: GetConnectionErrorMessageUseCase
+    private val connectionErrorMessage: GetConnectionErrorMessageUseCase,
+    private val invalidInputMessage: GetInvalidInputMessageUseCase
 ) : ViewModel() {
     private val _state: MutableLiveData<State> = MutableLiveData(State.Loading)
     val state: LiveData<State>
@@ -55,7 +52,7 @@ constructor(
                 if (ex.message.toString().isEmpty()) {
                     _state.postValue(State.InvalidInput(requireNotNull(ex.message)))
                 } else {
-                    _state.postValue(State.InvalidInput(connectionErrorMessage()))
+                    _state.postValue(State.InvalidInput(invalidInputMessage()))
                 }
             }
         }
